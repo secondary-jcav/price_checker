@@ -35,5 +35,6 @@ def send_mail(price):
     server.sendmail('username', 'username', message)
     server.quit()
 
+# TODO: add classes, add email & password
 
 

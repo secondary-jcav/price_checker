@@ -2,6 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 import smtplib
 
+"""
+
+"""
 
 URL = 'https://www.amazon.es/ASRock-90BXG3T01-A10GA0W-Barebone-Deskmini-X300/dp/B08NWHGTQQ/ref=sr_1_1?__mk_es_ES=' \
       '%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=deskmini+x300&qid=1630844246&sr=8-1'
@@ -10,7 +13,12 @@ headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KH
                          'Chrome/92.0.4515.131 Safari/537.36'}
 
 
+
 def check_price():
+    """
+    Parse the given URL
+    :return: amount in euros for the specified item
+    """
     page = requests.get(URL, headers=headers)
     soup = BeautifulSoup(page.content, 'html.parser')
     amount = 180
